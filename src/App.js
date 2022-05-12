@@ -2,22 +2,29 @@ import Navbar from './component/navbar'
 import Sidebar from './component/sidebar';
 import ListGenre from './pages/ListGenre';
 import ListMovie from './pages/ListMovie';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
 
-   <div>
+   <Router>
      <Navbar />
      <div className="flex">
-     <Sidebar />
-     <div className="basis-full">
-        <ListGenre />
-        {/* <ListMovie /> */}
-   </div>
+      <Sidebar />
+      <div className="basis-full">
+        <Routes>
+          <Route  path="/" element={<ListGenre />}/>
+            {/* <ListGenre /> */}
+          {/* </Route> */}
+          <Route  path="/movie" element={<ListMovie />}/>
+            {/* <ListMovie /> */}
+          {/* </Route> */}
+
+        </Routes>
+      </div>
     </div>
-   </div>
+   </Router>
 
   );
 }

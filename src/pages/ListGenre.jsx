@@ -1,29 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
-// import { Link } from 'react-router-dom';
 import allStore from '../store/action/index';
-// import ReactLoading from 'react-loading';
 
 function ListGenre() {
   const dispatch = useDispatch();
   const genre = useSelector(({ ListGenre }) => ListGenre);
-  const [data, setData] = useState([]);
-
-  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     dispatch(allStore.fetchAllGenre());
   }, [dispatch]);
-
-  // if (isLoading) {
-  //   return (
-  //     <div className="flex items-center h-screen justify-center content-center">
-  //       <br />
-  //       <ReactLoading type="cylon" color="#0000FF" height={100} width={50} />
-  //     </div>
-  //   );
-  // }
 
   return (
     <div>
