@@ -1,6 +1,6 @@
 const initialState = []
 
-const getGenreReducers = (state = initialState, action) => {
+const getGenreReducer = (state = initialState, action) => {
     if (action.type === "SET_GENRE") {
         if (Array.isArray(action.payload)) return action.payload
     }
@@ -8,4 +8,4 @@ const getGenreReducers = (state = initialState, action) => {
     return state
 }
 
-export default getGenreReducers
+export default getGenreReducer

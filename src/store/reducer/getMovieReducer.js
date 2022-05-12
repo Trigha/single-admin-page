@@ -1,6 +1,6 @@
 const initialState = []
 
-const getMovieReducers = (state = initialState, action) => {
+const getMovieReducer = (state = initialState, action) => {
     if (action.type === "SET_MOVIE") {
         if (Array.isArray(action.payload)) return action.payload
     }
@@ -8,4 +8,4 @@ const getMovieReducers = (state = initialState, action) => {
     return state
 }
 
-export default getMovieReducers
+export default getMovieReducer

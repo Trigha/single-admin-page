@@ -13,8 +13,8 @@ function App() {
      <div className="flex">
      <Sidebar />
      <div className="basis-full">
-        {/* <ListGenre /> */}
-        <ListMovie />
+        <ListGenre />
+        {/* <ListMovie /> */}
    </div>
     </div>
    </div>
