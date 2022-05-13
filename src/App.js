@@ -2,6 +2,7 @@ import Navbar from './component/navbar'
 import Sidebar from './component/sidebar';
 import ListGenre from './pages/ListGenre';
 import ListMovie from './pages/ListMovie';
+import Detail from './pages/detail';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -15,12 +16,8 @@ function App() {
       <div className="basis-full">
         <Routes>
           <Route  path="/" element={<ListGenre />}/>
-            {/* <ListGenre /> */}
-          {/* </Route> */}
           <Route  path="/movie" element={<ListMovie />}/>
-            {/* <ListMovie /> */}
-          {/* </Route> */}
-
+          <Route  path="/detail/:id" element={<Detail />}/>
         </Routes>
       </div>
     </div>

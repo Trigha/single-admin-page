@@ -1,14 +1,20 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import allStore from '../store/action/index';
+import { useNavigate } from 'react-router-dom';
 
 function ListGenre() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const genre = useSelector(({ ListGenre }) => ListGenre);
 
   useEffect(() => {
     dispatch(allStore.fetchAllGenre());
   }, [dispatch]);
+
+  const detail = (id) => {
+    navigate(`/detail/${id}`);
+  };
 
   return (
     <div>
@@ -27,6 +33,7 @@ function ListGenre() {
                     <tr
                       class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400"
                       key={key}
+                      onClick={() => detail(genre[key].id)}
                     >
                       <td class="px-4 py-3">
                         <div class="flex items-center text-sm">

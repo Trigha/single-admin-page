@@ -6,7 +6,7 @@ export const fetchAllMovie = () => {
             
             .then(({ data }) => {
                 dispatch(setMovie(data.data.genres))
-                console.log(data);
+                console.log(data.data.dates.data.results);
             }
             )
             .catch(err => {
